@@ -41,6 +41,8 @@ Each file within this directory : description of script it contains
 
 18-commas : Lists all files and directories of current directory, separated by commas.
 
+holberton.mgc : Can be used with the file command in order to detect certain data files, containing a specific string.
+
 Other general requirements enclude:
 - Either vi, vim, or emacs
 - Each file should be exactly 2 lines long
