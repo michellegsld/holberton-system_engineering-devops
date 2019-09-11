@@ -3,7 +3,7 @@ It will contain descriptions of each script for what they are doing.
 
 0-current_working_directory : Contains the script that prints the absolute path name of the current working directory.
 
-1-listit :
+1-listit : Contains the script for displaying contents of current directory.
 
 2-bring_me_home :
 
