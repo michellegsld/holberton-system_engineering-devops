@@ -1,2 +1,2 @@
-#!/bin/bash
-grep -R / -e 'HOLBERTON'
+0 string HOLBERTON Holberton data
+!:MIME Holberton
