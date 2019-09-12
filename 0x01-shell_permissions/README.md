@@ -34,7 +34,11 @@ Each file within this directory : description of script it contains
 
 15-symbolic_link_permissions : Changes owner to "betty" and group owner to "holberton" of the file "__hello".
 
-16-if_only : Script changes owner, to "betty" of the file "hello", but only if it's owned by another certain user, "guillaume".
+16-if_only : Changes owner, to "betty" of the file "hello", but only if it's owned by another certain user, "guillaume".
+
+100-Star_Wars : Plays StarWars IV.
+
+101-man_holberton : Creates a man page.
 
 Other general requirements include:
 - Either vi, vim, or emacs
