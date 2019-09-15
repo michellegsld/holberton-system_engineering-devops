@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lA | grep -c ^d
+find -mindepth 0 -type d | wc -l
