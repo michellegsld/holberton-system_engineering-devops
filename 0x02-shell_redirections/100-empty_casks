@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 | find -mindepth 0 -empty -type d,f
+ls -a1 | find -mindepth 0 -empty -type d,f | rev | cut -d / -f 1 | rev
