@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 | find -mindepth 1 -empty -type d,f
+ls -a1 | find -mindepth 0 -empty -type d,f
