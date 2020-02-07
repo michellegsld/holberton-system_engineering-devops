@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displays "Holberton School" 10 times and "hi" after the 9th iteration
+i=0
+while [ $i -le 9 ]
+	do echo "Holberton School"
+	((i++))
+	if [[ $i -eq 9 ]]; then
+		echo "hi"
+	fi
+done
