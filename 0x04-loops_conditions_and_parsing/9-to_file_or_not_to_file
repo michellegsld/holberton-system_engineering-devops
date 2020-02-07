@@ -5,12 +5,12 @@ if test ! -e $FILE; then
 	echo "holbertonschool file does not exist"
 else
 	echo "holbertonschool file exists"
-fi
-if -s $FILE; then
-	echo "holbertonschool file is not empty"
-else
-	echo "holbertonschool file is empty"
-fi
-if test -f $FILE; then
-	echo "holbertonschool is a regular file"
+	if -s $FILE; then
+		echo "holbertonschool file is not empty"
+	else
+		echo "holbertonschool file is empty"
+	fi
+	if test -f $FILE; then
+		echo "holbertonschool is a regular file"
+	fi
 fi
