@@ -5,7 +5,7 @@ if test ! -e $FILE; then
 	echo "holbertonschool file does not exist"
 else
 	echo "holbertonschool file exists"
-	if -s $FILE; then
+	if test -s $FILE; then
 		echo "holbertonschool file is not empty"
 	else
 		echo "holbertonschool file is empty"
