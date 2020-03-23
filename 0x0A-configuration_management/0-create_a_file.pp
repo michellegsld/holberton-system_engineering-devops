@@ -1,6 +1,7 @@
 # Task 0: Create a file
-file { '/tmp/holberton.pp':
+file { '/tmp/holberton':
   ensure  =>  'file',
+  path    =>  '/tmp/holberton',
   content =>  'I love Puppet',
   mode    =>  '0744',
   group   =>  'www-data',
