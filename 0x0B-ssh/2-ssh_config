@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Change SSH configuration file to connect w/o password
+ssh_config IdentifyFile ~/.ssh/holberton PasswordAuthentication no
