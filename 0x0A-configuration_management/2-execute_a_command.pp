@@ -1,5 +1,5 @@
 # Task 2: Execute a command
 exec {
-  path    =>  '/usr/bin',
+  path    =>  '/usr/bin/',
   command =>  'pkill -f ./killmenow',
 }
