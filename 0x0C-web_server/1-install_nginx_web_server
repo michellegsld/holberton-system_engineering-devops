@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Installs Nginx
 apt-get -y install nginx
-echo 'Holberton school' > /var/www/html/index.html
-sudo service nginx restart
+echo 'Holberton School' > /var/www/html/index.html
+sudo service nginx start
