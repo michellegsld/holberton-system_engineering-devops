@@ -1,6 +1,6 @@
 # Task 4: Client configuration file (w/ Puppet) 
 file_line { 'turn off passwd auth':
-  ensure  =>  present
+  ensure  =>  present,
   path    =>  '/etc/ssh/ssh_config',
   line    =>  'PasswordAuthentication no',
 ;
