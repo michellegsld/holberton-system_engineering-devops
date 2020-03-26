@@ -2,12 +2,12 @@
 include stdlib
 
 file_line {
-  'turn off passwd auth':
+  'Turn off passwd auth':
   ensure =>  present,
   path   =>  '/etc/ssh/ssh_config',
   line   =>  'PasswordAuthentication no'
   ;
-  'declare identity file':
+  'Declare identity file':
   ensure =>  present,
   path   =>  '/etc/ssh/ssh_config',
   line   =>  'IdentifyFile ~/.ssh/holberton'
