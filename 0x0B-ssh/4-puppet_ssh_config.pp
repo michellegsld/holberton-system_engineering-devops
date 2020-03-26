@@ -1,13 +1,14 @@
 # Task 4: Client configuration file (w/ Puppet) 
 include stdlib
+
 file_line {
-  'Turn off passwd auth':
+  'turn off passwd auth':
   ensure =>  present,
   path   =>  '/etc/ssh/ssh_config',
-  line   =>  'PasswordAuthentication no',
+  line   =>  'PasswordAuthentication no'
 ;
-'Declare identity file':
+'declare identity file':
   ensure =>  present,
-  path   =>  '/etc/ssh/ssh_config'
+  path   =>  '/etc/ssh/ssh_config',
   line   =>  'IdentifyFile ~/.ssh/holberton'
 }
