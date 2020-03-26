@@ -1,4 +1,6 @@
-# Task 4: Client configuration file (w/ Puppet) 
+# Task 4: Client configuration file (w/ Puppet)
+include stdlib
+
 file_line {
   'turn off passwd auth':
   ensure =>  present,
