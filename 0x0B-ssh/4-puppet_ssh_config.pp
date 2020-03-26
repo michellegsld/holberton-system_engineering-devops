@@ -10,5 +10,5 @@ file_line {
   'declare identity file':
   ensure =>  'present',
   path   =>  '/etc/ssh/ssh_config',
-  line   =>  'IdentifyFile ~/.ssh/holberton'
+  line   =>  'IdentityFile ~/.ssh/holberton'
 }
