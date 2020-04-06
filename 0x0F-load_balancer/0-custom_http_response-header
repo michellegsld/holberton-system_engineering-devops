@@ -12,6 +12,6 @@ var2="\terror_page 404 /404.html;"
 sudo sed -i "36i \ $var2" /etc/nginx/sites-available/default
 var3="\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
 sudo sed -i "44i \ $var3" /etc/nginx/sites-available/default
-var4="\tX-Served-By: $HOSTNAME;\n"
+var4="\tadd_header X-Served-By: $HOSTNAME;\n"
 sudo sed -i "44i \ $var4" /etc/nginx/sites-available/default
 sudo service nginx start
