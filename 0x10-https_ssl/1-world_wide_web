@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2086
+# Displays information about domain/subdomains
+
+function domain_info {
+    if [ $# == 1 ]; then
+        var=`dig www.$1 | grep -A1 ';; ANSWER SECTION:' | awk 'FNR == 2 {print $4, $5}'`
+        record=`echo $var | cut -d ' ' -f 1`; ip=`echo $var | cut -d ' ' -f 2`
+        echo "The subdomain www is a $record record and points to $ip"
+        var=`dig lb-01.$1 | grep -A1 ';; ANSWER SECTION:' | awk 'FNR == 2 {print $4, $5}'`
+        record=`echo $var | cut -d ' ' -f 1`; ip=`echo $var | cut -d ' ' -f 2`
+        echo "The subdomain lb-01 is a $record record and points to $ip"
+        var=`dig web-01.$1 | grep -A1 ';; ANSWER SECTION:' | awk 'FNR == 2 {print $4, $5}'`
+        record=`echo $var | cut -d ' ' -f 1`; ip=`echo $var | cut -d ' ' -f 2`
+        echo "The subdomain web-01 is a $record record and points to $ip"
+        var=`dig web-02.$1 | grep -A1 ';; ANSWER SECTION:' | awk 'FNR == 2 {print $4, $5}'`
+        record=`echo $var | cut -d ' ' -f 1`; ip=`echo $var | cut -d ' ' -f 2`
+        echo "The subdomain web-02 is a $record record and points to $ip"
+    else
+        var=`dig $2.$1 | grep -A1 ';; ANSWER SECTION:' | awk 'FNR == 2 {print $4, $5}'`
+        record=`echo $var | cut -d ' ' -f 1`; ip=`echo $var | cut -d ' ' -f 2`
+        echo "The subdomain $2 is a $record record and points to $ip"
+    fi
+}
+
+domain_info $1 $2
