@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Run the whoami command under another user
+runuser -l $1 -c 'whoami'
