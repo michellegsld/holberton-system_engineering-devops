@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Generated a MySQL dump and creates a compressed archive out of it
-mysqldump -u root -p "$1" --all-databases > backup.sql
-mysqldump -u root -p "$1" --all-databases | gzip > "$(date +'%d-%m-%Y').tar.gz"
+if [ "$#" -eq 2 ]; then
+	mysqldump -u root -p "$1" --all-databases > backup.sql
+	mysqldump -u root -p "$1" --all-databases | gzip > "$(date +'%d-%m-%Y').tar.gz"
+fi
