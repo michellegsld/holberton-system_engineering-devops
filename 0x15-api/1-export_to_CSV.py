@@ -15,7 +15,7 @@ from sys import argv
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
     req = requests.get(url)
-    name = req.json()["name"].split(" ")[0]
+    username = req.json()["username"]
     total = len((requests.get(url + '/todos')).json())
     req = requests.get(url + '/todos')
     amount = len(req.json())
@@ -25,4 +25,4 @@ if __name__ == "__main__":
         for i in range(amount):
             completed = req.json()[i]["completed"]
             title = req.json()[i]["title"]
-            w.writerow([argv[1], name, completed, title])
+            w.writerow([argv[1], username, completed, title])
