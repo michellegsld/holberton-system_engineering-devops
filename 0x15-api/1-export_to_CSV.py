@@ -20,7 +20,7 @@ if __name__ == "__main__":
     req = requests.get(url + '/todos')
     amount = len(req.json())
 
-    with open('USER_ID.csv', mode='w') as f:
+    with open('{}.csv'.format(argv[1]), mode='w') as f:
         w = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         for i in range(amount):
             completed = req.json()[i]["completed"]
