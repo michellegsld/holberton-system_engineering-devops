@@ -14,8 +14,9 @@ if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
     req = requests.get(url)
     name = req.json()["name"]
+    total = len((requests.get(url + '/todos')).json())
     req = requests.get(url + '/todos', params={"completed": "true"})
     amount = len(req.json())
-    print("Employee {} is done with tasks({}/20):".format(name, amount))
+    print("Employee {} is done with tasks({}/{}):".format(name, amount, total))
     for i in range(amount):
         print("\t{}".format(req.json()[i]["title"]))
