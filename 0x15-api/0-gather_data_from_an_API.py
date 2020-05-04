@@ -15,10 +15,12 @@ if __name__ == "__main__":
         url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
         req = requests.get(url)
         name = req.json()["name"]
+        req = requests.get(url + '/todos', params={"completed": "false"})
+        done = len(req.json())
         req = requests.get(url + '/todos', params={"completed": "true"})
-        amount = len(req.json())
-        print("Employee {} is done with tasks ({}/20)".format(name, amount))
+        cur = len(req.json())
+        print("Employee {} is done with tasks({}/{}):".format(name, cur, done))
         for i in range(amount):
-            print("{}".format(req.json()[i]["title"]))
+            print("\t{}".format(req.json()[i]["title"]))
     except:
         pass
