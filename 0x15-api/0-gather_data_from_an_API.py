@@ -19,4 +19,4 @@ if __name__ == "__main__":
     amount = len(req.json())
     print("Employee {} is done with tasks({}/{}):".format(name, amount, total))
     for i in range(amount):
-        print("\t{}".format(req.json()[i]["title"]))
+        print("\t {}".format(req.json()[i]["title"]))
