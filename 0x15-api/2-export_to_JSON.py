@@ -28,7 +28,7 @@ if __name__ == "__main__":
         title = req.json()[i]["title"]
         data[argv[1]].append({
             "task": title,
-            "compelted": completed,
+            "completed": completed,
             "username": username
         })
 
