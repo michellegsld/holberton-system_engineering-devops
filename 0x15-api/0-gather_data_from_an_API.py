@@ -11,11 +11,14 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
-    req = requests.get(url)
-    name = req.json()["name"]
-    req = requests.get(url + '/todos', params={"completed": "true"})
-    amount = len(req.json())
-    print("Employee {} is done with tasks ({}/20)".format(name, amount))
-    for i in range(amount):
-        print("{}".format(req.json()[i]["title"]))
+    try:
+        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
+        req = requests.get(url)
+        name = req.json()["name"]
+        req = requests.get(url + '/todos', params={"completed": "true"})
+        amount = len(req.json())
+        print("Employee {} is done with tasks ({}/20)".format(name, amount))
+        for i in range(amount):
+            print("{}".format(req.json()[i]["title"]))
+    except:
+        pass
