@@ -20,11 +20,7 @@ def top_ten(subreddit):
     head = {'user-agent': 'michellegsld-holberton'}
     req = requests.get(url, params=param, headers=head, allow_redirects=False)
     try:
-        titles = []
         for num in range(0, 10):
-            title = req.json()['data']['children'][num]['data']['title']
-            titles.append(title)
-        for title in titles:
-            print(title)
+            print(req.json()['data']['children'][num]['data']['title'])
     except:
         print(None)
