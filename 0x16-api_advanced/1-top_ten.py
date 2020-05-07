@@ -4,7 +4,7 @@ Task 1:
 Queries the Reddit API and prints the titles of
 the first 10 hot posts listed for a given subreddit
 If a subreddit is invalid then it prints None
-1-top-ten.py
+1-top_ten.py
 """
 import requests
 
