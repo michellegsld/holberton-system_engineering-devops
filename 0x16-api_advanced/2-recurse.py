@@ -20,9 +20,8 @@ def recurse(subreddit, hot_list=[], param={}):
     req = requests.get(url, params=param, headers=head, allow_redirects=False)
 
     try:
-        for child in range(0, len(req.json()['data']['children'])):
-            post = req.json()['data']['children'][child]['data']['title']
-            hot_list.append(post)
+        for child in req.json()['data']['children']:
+            hot_list.append(child['data']['title'])
         param['after'] = req.json()['data']['after']
     except:
         return None
