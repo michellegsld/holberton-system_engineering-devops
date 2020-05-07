@@ -22,10 +22,10 @@ def recurse(subreddit, hot_list=[], param={}, child=0):
     try:
         hot_list.append(req.json()['data']['children'][child]['data']['title'])
     except:
-        if req.json()['data']['after'] is not None:
+        try:
             child = -1
             param['after'] = req.json()['data']['after']
-        else:
+        except:
             return None
 
     recurse(subreddit, hot_list, param, child=child+1)
