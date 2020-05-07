@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[], child=0):
     """
     Returns:
     List of all hot titles in a subreddit
-    Or None is the subreddit is invalid
+    Or None if the subreddit is invalid
     """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     head = {'user-agent': 'michellegsld-holberton'}
