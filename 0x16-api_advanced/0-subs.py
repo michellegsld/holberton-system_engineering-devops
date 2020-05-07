@@ -7,6 +7,7 @@ if a subreddit is invalid then it returns 0
 """
 import requests
 
+
 def number_of_subscribers(subreddit):
     """
     Returns:
