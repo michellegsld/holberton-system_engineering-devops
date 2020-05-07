@@ -9,7 +9,7 @@ If a subreddit is invalid then it returns None
 import requests
 
 
-def recurse(subreddit, hot_list=[], param={}):
+def recurse(subreddit, hot_list=[], child=0):
     """
     Returns:
     List of all hot titles in a subreddit
@@ -17,14 +17,12 @@ def recurse(subreddit, hot_list=[], param={}):
     """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     head = {'user-agent': 'michellegsld-holberton'}
-    req = requests.get(url, params=param, headers=head, allow_redirects=False)
+    req = requests.get(url, headers=head, allow_redirects=False)
 
     try:
-        for child in req.json()['data']['children']:
-            hot_list.append(child['data']['title'])
-        param['after'] = req.json()['data']['after']
+        hot_list.append(req.json()['data']['children'][child]['data']['title'])
     except:
         return None
 
-    recurse(subreddit, hot_list, param)
+    recurse(subreddit, hot_list, child=child+1)
     return hot_list
