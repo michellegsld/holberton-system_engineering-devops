@@ -31,4 +31,4 @@ sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2002, "Ca
 ```
 At least it wasn't a memory leak! Those can be hard to figure out:
 
-![alt text](https://github.com/michellegsld/holberton-system_engineering-devops/0x19-postmortem/memory_leak.jpg "Memory Leak Joke")
+![alt text](https://github.com/michellegsld/holberton-system_engineering-devops/blob/master/0x19-postmortem/memory_leak.jpg "Memory Leak Joke")
